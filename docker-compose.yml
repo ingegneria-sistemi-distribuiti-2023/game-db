@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:  
-  authentication-db:
+  match-db:
     build: 
       context: .
       dockerfile: Dockerfile
@@ -24,7 +24,7 @@ services:
       retries: 55
     networks:
       - game-db-network
-    container_name: game_db
+    container_name: match_db
 
 networks: 
   game-db-network:
