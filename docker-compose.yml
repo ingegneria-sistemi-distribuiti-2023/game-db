@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:  
+  authentication-db:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '13306:3306'
+    expose:
+      # Opens port 13306 on the container
+      - '13306'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: match_pool
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 55
+    networks:
+      - game-db-network
+    container_name: game_db
+
+networks: 
+  game-db-network:
+    name: game-db-network
