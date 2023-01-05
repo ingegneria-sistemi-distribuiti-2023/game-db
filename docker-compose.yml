@@ -7,13 +7,13 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - '13306:3306'
+      - '23306:3306'
     expose:
-      # Opens port 13306 on the container
-      - '13306'
+      # Opens port 23306 on the container
+      - '23306'
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: match_pool
+      MYSQL_DATABASE: gamedb
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     healthcheck:
