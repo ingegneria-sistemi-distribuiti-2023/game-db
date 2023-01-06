@@ -5,7 +5,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    restart: always
+    restart: "no"
     ports:
       - '13306:3306'
     expose:
