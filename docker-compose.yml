@@ -5,7 +5,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    restart: "no"
+    restart: unless-stopped
     ports:
       - '13306:3306'
     expose:
@@ -24,7 +24,7 @@ services:
       retries: 55
     networks:
       - game-db-network
-    container_name: match_db
+    container_name: match-db
 
 networks: 
   game-db-network:
