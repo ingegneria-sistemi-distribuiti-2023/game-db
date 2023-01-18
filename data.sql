@@ -1,9 +1,5 @@
--- match service
--- script sql di dati fittizzi usati per il test
-
--- tabella squadre
+-- Initialize teamDB with values
 INSERT INTO gamedb.team (name) VALUES
-	 ('inter'),
 	 ('milan'),
 	 ('roma'),
 	 ('catania'),
@@ -22,9 +18,5 @@ INSERT INTO gamedb.team (name) VALUES
 	 ('chievo'),
 	 ('spal'),
 	 ('siena'),
-	 ('lazio');
-
--- tabella partite
--- INSERT INTO gamedb.match_info (home_score,away_score,start_time,end_time,`status`,home_team,away_team) VALUES
--- 	 (0,0,'2023-01-02 12:39:28',NULL,'A',1,3);
-
+	 ('lazio'),
+	 ('inter');
