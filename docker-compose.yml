@@ -2,9 +2,10 @@ version: '3.9'
 
 services:  
   match-db:
-    build: 
-      context: .
-      dockerfile: Dockerfile
+    # build: 
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: khalld/game-db:latest
     restart: unless-stopped
     ports:
       - '13306:3306'
